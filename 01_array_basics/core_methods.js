@@ -260,3 +260,66 @@ const isExistSkill = (arr, item) => {
 
 console.log(isExistSkill(rawSkills, "React"));  // Output: Skill not found!
 console.log(isExistSkill(rawSkills, "Docker"));
+
+
+
+/*
+1. Array.isArray() (Kya yeh sach mein array hai?)
+JavaScript mein jab aap typeof [] karte ho, toh woh "object" batata hai. Isliye yeh pata karne ke liye ki koi cheez array hai ya nahi, hum iska use karte hain. Yeh true ya false deta hai.
+*/
+
+let myArr = [1, 2, 3];
+let myObj = { name: "Mehtab" };
+
+console.log(Array.isArray(myArr)); // Output: true
+console.log(Array.isArray(myObj)); // Output: false
+
+
+
+/*
+2. at() (Negative Indexing ki power)
+Pehle agar hume array ka aakhiri element chahiye hota tha, 
+toh hume arr[arr.length - 1] likhna padta tha. at() ne ise aasan kar diya.
+ Isme aap negative numbers bhi daal sakte ho, -1 ka matlab aakhiri element, -2 ka matlab piche se dusra.
+*/
+
+
+let heroes = ["Ironman", "Batman", "Thor"];
+
+console.log(heroes.at(0));  // Output: Ironman
+console.log(heroes.at(-1));
+
+
+/*
+3. flat() (Khichdi array ko seedha karna)
+Agar aapke paas ek array ke andar aur arrays hain (nested arrays), 
+toh flat() un sabko nikaal kar ek single normal array bana deta hai. Brackets mein aap depth (kitne level andar jaana hai) batate ho.
+
+*/
+let messyArr = [1, [2, 3], [4, [5, 6]]];
+
+console.log(messyArr.flat(1)); // Output: [1, 2, 3, 4, [5, 6]] (1 level flat hua)
+console.log(messyArr.flat(2)); // Output: [1, 2, 3, 4, 5, 6] (Pura flat ho gaya!)
+
+
+
+/*
+4. toString() (Chupchaap string badalna)
+Yeh array ke saare elements ko comma , se jodkar ek simple string bana deta hai. Yeh join(",") ki tarah hi kaam karta hai, par isme aap separator badal nahi sakte.
+*/
+
+let items = ["Aloo", "Pyaz", "Tamatar"];
+console.log(items.toString());
+/*
+5. copyWithin() (Array ke andar hi copy-paste chalana — Mutating)
+Yeh thoda kam use hota hai par bade data mein kaam aata hai. Yeh array ke hi ek hisse ko copy karke, usi array ke dusre hisse par overwrite kar deta hai, bina size badle.
+copyWithin(target_index, start_index, end_index)
+*/
+let chars = ["A", "B", "C", "D", "E"];
+// Index 0 par paste karo... woh maal jo index 3 se shuru ho raha hai
+chars.copyWithin(0, 3); 
+console.log(chars); // Output: ["D", "E", "C", "D", "E"] ("D", "E" copy hokar aage aa gaye)
+
+
+
+
