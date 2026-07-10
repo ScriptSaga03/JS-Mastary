@@ -47,3 +47,35 @@ console.log(team);
 console.log(removeFirstPlayer)
 
 
+
+// Task
+let fruits = ["Apple", "Banana"];
+const addFruitsInLast = (list, item ) =>{
+    list.push(item);
+    return list;
+}
+
+console.log('add item :' , addFruitsInLast(fruits, "Grapes"));
+
+console.log('add item :' , addFruitsInLast(fruits, "Watermelon"));
+
+
+
+// add fruits in starting
+const addFruitsInFirst = (list, item )  => {
+     list.unshift(item);
+     return list
+}
+
+
+console.log('add item : ', addFruitsInFirst(fruits, "strawberry" ));
+
+
+// update item 
+const updateFruitList = (item , index, value) =>{
+    item[index] = value;
+    return item
+}
+
+console.log('update fruit list: ', updateFruitList(fruits, 3,"ice-cream"));
+
