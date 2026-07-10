@@ -92,3 +92,61 @@ const getChuck = (arr, start, end) =>{
 }
 
 console.log('chunk :', getChuck(techStack, 0,2))
+
+
+
+
+5. join() (Array ko Text/String banana)
+Yeh array ke saare elements ko aapas mein jod kar ek single string (text) bana deta hai. 
+Aap brackets ke andar bata sakte ho ki beech mein kya lagana hai (jaise comma, space, ya dash)
+
+*/
+
+
+let myWords = ["My", "name", "is", "Mehtab"];
+let sentence1 = myWords.join(" ");
+console.log(sentence1)
+
+
+/*
+6. reverse() (Ulta kar dena — Mutating)
+Yeh array ka order bilkul ulta (piche se aage) kar deta hai. Dhayan rahe, yeh original array ko badal deta hai.
+
+*/
+
+let order  = ['first', 'second', 'third'];
+order.reverse();
+console.log(order);
+
+
+/*
+7. sort() (Tartib mein lagana / Alphabetical Order — Mutating)
+Yeh array ke elements ko alphabetical order (A to Z) mein arrange kar deta hai. Yeh bhi original array ko badal deta hai.
+(Note: Numbers ke liye iska ek chota sa rule alag hota hai jo hum aage dekhenge, abhi text par samajhte hain).
+
+*/
+
+let fruitsList = ["Banana", "Apple", "Mango", "Cherry"];
+fruitsList.sort();
+
+console.log(fruitsList);
+
+
+
+/*
+8. indexOf() aur lastIndexOf() (Position/Index dhoondhna)
+indexOf(): Yeh check karta hai ki koi element array mein pehli baar kaunse index par aaya hai. Agar element array mein nahi hai, toh yeh -1 deta hai.
+lastIndexOf(): Agar ek hi element array mein baar-baar aaya hai, toh yeh batata hai ki woh aakhiri baar kaunse index par aaya tha.
+*/
+
+
+let repeatList = ["Aloo", "Gobhi", "Matar", "Aloo", "Paneer"];
+
+// Pehli baar "Aloo" kahan hai?
+console.log(repeatList.indexOf("Aloo")); // Output: 0
+
+// Aakhiri baar "Aloo" kahan hai?
+console.log(repeatList.lastIndexOf("Aloo")); // Output: 3
+
+// Jo cheez hai hi nahi:
+console.log(repeatList.indexOf("Chicken"));
